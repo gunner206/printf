@@ -26,5 +26,10 @@ char print_percent(va_list args)
 
 char print_string(va_list args)
 { 
-        int i 
+        char *p;
+	int i;
+	p = va_arg(args, char*)
+	for (i = 0; p[i] != '\0';i++)
+		_putchar(p[i]);
+	return (i)
 }   
