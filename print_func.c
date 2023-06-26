@@ -1,18 +1,30 @@
 #include "main.h"
 
-char print_char(char c)
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
 {
-	return (write(1, va_args(args, i, 1));
-
+	return (write(1, &c, 1));
+}
+int print_char(va_list args)
+{
+	_putchar(va_arg(args, int));
+	return (1);
 }
 
 char print_percent(va_list args)
-{ 
-	c == '%';
-	print_char(c);
+{
+	(void)args;
+	_putchar('%');
+	return (1);
 }
 
-char print_string(va_list args, char *string)
+char print_string(va_list args)
 { 
         int i 
 }   
