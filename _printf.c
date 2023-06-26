@@ -24,8 +24,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] = specifiers[j].specifier[0])
 				{
-					token == format[i + 1];
-					specifiers[j].f(args, token);
+					specifiers[j].f(args);
 				}
 				j++;
 			}
