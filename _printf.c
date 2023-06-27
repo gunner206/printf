@@ -2,41 +2,25 @@
 
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int i = 0;
-	int j = 0;
-	char *token;
+	int printed_chars;
 	
-	va_start(args, format);
-
-	specifier_t specifiers[] = {
-	{"c", print_char},
-	{"s", print_string},
-	{'%', print_percent},
-	{NULL, NULL}
+	specifier_t func_list[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{NULL, NULL}
 	};
 
-	while (format != "\0" && format[i] != '\0')
-	{
-		while (specifiers[j].specifer != '\0')
-		{
-			if (format[i] == '%' && format[i + 1] != '\0')
-			{
-				if (format[i + 1] = specifiers[j].specifier[0])
-				{
-					specifiers[j].f(args);
-				}
-				j++;
-			}
-			i++;
-		}
-		j++;
-	}
-	i++;
-	
+	va_list args;
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(args, format);
+
+	printed_chars = convert(format, func_list, args);
 	va_end(args);
-
-
-
-
+	
+	
+	return (printed_chars);
 }

@@ -13,23 +13,28 @@ int _putchar(char c)
 }
 int print_char(va_list args)
 {
-	_putchar(va_arg(args, int));
+	char c;
+	c = va_arg(args, int);
+	_putchar(c);
 	return (1);
 }
 
-char print_percent(va_list args)
+int print_percent(va_list args)
 {
 	(void)args;
 	_putchar('%');
 	return (1);
 }
 
-char print_string(va_list args)
-{ 
-        char *p;
+int print_string(va_list args)
+{
+	const char *p;
 	int i;
-	p = va_arg(args, char*)
-	for (i = 0; p[i] != '\0';i++)
+	
+	p = va_arg(args, const char*);
+	if (p == NULL)
+		p = "(null)";
+	for (i = 0 ; p[i] != '\0' ; i++)
 		_putchar(p[i]);
-	return (i)
+	return (i);
 }   

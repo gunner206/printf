@@ -5,11 +5,27 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-int _printf(const char *format, ...);
-
+/**
+ * struct specifiers - struct for specifiers
+ * @specifier: given specifier
+ * @f: function associated
+ */
 typedef struct specifier
 {
 	char *specifier;
-	char (*f)(va_list args, char *);
-}
+	int (*f)(va_list args);
+}specifier_t;
+
+/* print_function.c module */
+int _putchar(char c);
+int print_char(va_list args);
+int print_percent(va_list args);
+int print_string(va_list args);
+
+/* _printf.c module */
+int _printf(const char *format, ...);
+
+/* convert.c module */
+int convert(const char *format, specifier_t func_list[], va_list args);
+
 #endif
