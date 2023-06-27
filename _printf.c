@@ -3,7 +3,6 @@
 int _printf(const char *format, ...)
 {
 	int printed_chars;
-	
 	specifier_t func_list[] = {
 		{"c", print_char},
 		{"s", print_string},
@@ -20,7 +19,5 @@ int _printf(const char *format, ...)
 
 	printed_chars = convert(format, func_list, args);
 	va_end(args);
-	
-	
 	return (printed_chars);
 }

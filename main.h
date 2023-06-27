@@ -14,7 +14,8 @@ typedef struct specifier
 {
 	char *specifier;
 	int (*f)(va_list args);
-}specifier_t;
+}
+specifier_t;
 
 /* print_function.c module */
 int _putchar(char c);
