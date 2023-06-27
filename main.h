@@ -6,7 +6,7 @@
 #include <stdarg.h>
 
 /**
- * struct specifiers - struct for specifiers
+ * struct specifier - struct for specifiers
  * @specifier: given specifier
  * @f: function associated
  */

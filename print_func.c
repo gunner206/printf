@@ -11,6 +11,13 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * print_char - prints a character
+ * @args: argument lisr
+ *
+ * Return: char printed
+ */
 int print_char(va_list args)
 {
 	char c;
@@ -18,6 +25,7 @@ int print_char(va_list args)
 	_putchar(c);
 	return (1);
 }
+
 int print_percent(va_list args)
 {
 	(void)args;
