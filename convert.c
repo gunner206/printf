@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * convert - looks for specifier function
+ * @format: format argument
+ * @func_list: functions struct
+ * @args: list of args
+ *
+ * Return: printed chars
+ */
 int convert(const char *format, specifier_t func_list[], va_list args)
 {
 	int i;
