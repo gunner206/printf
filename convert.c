@@ -32,7 +32,7 @@ int convert(const char *format, specifier_t func_list[], va_list args)
 			}
 			if (func_list[j].specifier == NULL && format[i + 1] != ' ')
 			{
-				if (format[i] != '\0')
+				if (format[i + 1] != '\0')
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
