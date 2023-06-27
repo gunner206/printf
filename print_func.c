@@ -55,3 +55,42 @@ int print_string(va_list args)
 		_putchar(p[i]);
 	return (i);
 }
+/**
+ * print_int - function that print a number
+ * @args: pointer to first argument
+ * Return: n
+ */
+int print_int(va_list args)
+{
+	int n;
+	n = print_number(args);
+	return n;
+}
+/**
+ * print_number - function that return the len of a number
+ * @args: pointer to first argument
+ * Return: len
+ */
+int print_number(va_list args)
+{
+	int n = va_arg(args, int);
+	unsigned int num = (n < 0) ? -n : n;
+	int len = 0;
+	int check = 1;
+
+	if (n < 0)
+		len += _putchar('-');
+
+	while (num / check > 9)
+		check *= 10;
+
+	while (check != 0)
+	{
+		len += _putchar('0' + num / check);
+		num %= check;
+		check /= 10;
+	}
+
+	return len;
+}
+
