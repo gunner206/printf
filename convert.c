@@ -12,7 +12,7 @@ int convert(const char *format, specifier_t func_list[], va_list args)
 {
 	int i;
 	int j;
-	int printed_chars;
+	int printed_chars = 0;
 	int func;
 
 	for (i = 0 ; format[i] != '\0' ; i++)
@@ -30,9 +30,9 @@ int convert(const char *format, specifier_t func_list[], va_list args)
 					break;
 				}
 			}
-			if (func_list[j].specifier == NULL && format[i + 1] == ' ')
+			if (func_list[j].specifier == NULL && format[i + 1] != ' ')
 			{
-				if (format[i] != '\0')
+				if (format[i + 1] != '\0')
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
