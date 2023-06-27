@@ -29,7 +29,7 @@ char print_string(va_list args)
         char *p;
 	int i;
 	p = va_arg(args, char*)
-	for (i = 0; p[i] != '\0';i++)
+	for (i = 0; p[i] != '\0'; i++)
 		_putchar(p[i]);
-	return (i)
-}   
+return (i);
+}
