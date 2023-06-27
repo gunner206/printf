@@ -37,4 +37,4 @@ int print_string(va_list args)
 	for (i = 0 ; p[i] != '\0' ; i++)
 		_putchar(p[i]);
 	return (i);
-}   
+}
