@@ -1,19 +1,6 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * print_char - prints a character
  * @args: argument lisr
  *
@@ -63,8 +50,9 @@ int print_string(va_list args)
 int print_int(va_list args)
 {
 	int n;
+
 	n = print_number(args);
-	return n;
+	return (n);
 }
 /**
  * print_number - function that return the len of a number
@@ -91,6 +79,6 @@ int print_number(va_list args)
 		check /= 10;
 	}
 
-	return len;
+	return (len);
 }
 
