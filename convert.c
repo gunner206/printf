@@ -12,7 +12,7 @@ int convert(const char *format, specifier_t func_list[], va_list args)
 {
 	int i;
 	int j;
-	int printed_chars;
+	int printed_chars = 0;
 	int func;
 
 	for (i = 0 ; format[i] != '\0' ; i++)
